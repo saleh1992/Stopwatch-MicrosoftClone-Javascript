@@ -18,10 +18,11 @@ allbtn.addEventListener("click", () => {
   if (span[0].classList.contains("active") == false) {
     console.log("play");
     stopwatch();
-    flag.removeAttribute("disabled")
-    rest.removeAttribute("disabled")
+    flag.removeAttribute("disabled");
+    rest.removeAttribute("disabled");
   } else {
     console.log("stop");
+    flag.setAttribute("disabled", "");
     stopInterval();
   }
 });
@@ -33,13 +34,14 @@ rest.addEventListener("click", () => {
   minCounter = 0;
   hrCounter = 0;
   paragrh.innerHTML = "";
-  span.forEach((restPlay) => {
-    restPlay.classList.toggle("active");
-  });
-
+  if (span[1].getAttribute("class") == "active") {
+    span.forEach((restPlay) => {
+        restPlay.classList.toggle("active");
+      });
+  }else{}
   stopInterval();
-  flag.setAttribute("disabled","")
-  rest.setAttribute("disabled","")
+  flag.setAttribute("disabled", "");
+  rest.setAttribute("disabled", "");
 });
 flag.addEventListener("click", () => {
   flagg();
