@@ -9,99 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
     <title>Stopwatch</title>
 </head>
-
-<style>
-    body {
-        background: #03a9f4;
-    }
-
-    .conatiner {
-        text-align: center;
-        max-width: 450px;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-top: 212px;
-        margin-bottom: 20px;
-    }
-
-    div {
-        display: inline-block;
-    }
-
-    #sec,
-    #min,
-    #hour {
-        position: relative;
-        font-size: 34px;
-        margin: 0 5px;
-        font-size: 85px;
-    }
-
-    #min::before,
-    #hour::before {
-        content: ":";
-        position: absolute;
-        left: 95%;
-        top: 43%;
-        transform: translateY(-50%);
-    }
-
-    #sec::after,
-    #min::after,
-    #hour::after {
-        content: "";
-        position: absolute;
-        font-size: 17px;
-        left: 50%;
-        bottom: -8px;
-        transform: translateX(-50%);
-    }
-
-    #sec::after {
-        content: "sec";
-    }
-
-    #min::after {
-        content: "min";
-    }
-
-    #hour::after {
-        content: "hr";
-    }
-
-    .btn-section {
-        width: 100%;
-        margin-top: 35px;
-    }
-
-    button {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin: 0 12px;
-        border: none;
-        font-size: 21px;
-        line-height: 50px;
-        cursor: pointer;
-    }
-
-    span {
-        display: none;
-    }
-
-    .active {
-        display: block;
-    }
-
-    p {
-        text-align: center;
-    }
-</style>
-
-<body class="op">
+<body>
     <div class="conatiner">
         <div id="hour">00</div>
         <div id="min">00</div>
@@ -117,86 +29,7 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-    <script>
-        let start = document.querySelector("#start");
-        let stop = document.querySelector("#stop");
-        let span = Array.from(document.querySelectorAll("span"));
-        let allbtn = document.querySelector("#start-stop");
-        let paragrh = document.createElement("p");
-        let secCounter = 0;
-        let minCounter = 0;
-        let hrCounter = 0;
-
-
-        allbtn.addEventListener("click", () => {
-            span.forEach((spanBtns) => {
-                spanBtns.classList.toggle("active")
-                //this manual method for toggle
-                // spanBtns.getAttribute("class") == "active"?
-                // spanBtns.removeAttribute("class"):
-                // spanBtns.setAttribute("class", "active");
-            })
-            if (span[0].classList.contains("active") == false) {
-                console.log("play");
-                stopwatch();
-            } else {
-                console.log("stop");
-                stopInterval()
-            }
-        })
-        rest.addEventListener("click", () => {
-            hour.innerHTML = "00"
-            min.innerHTML = "00"
-            sec.innerHTML = "00"
-            secCounter = 0;
-            minCounter = 0;
-            hrCounter = 0;
-            paragrh.innerHTML = ""
-            span.forEach((restPlay) => {
-                restPlay.classList.toggle("active")
-            })
-            stopInterval()
-        })
-        flag.addEventListener("click", () => {
-            flagg()
-        })
-
-        function stopwatch() {
-            interval = setInterval(() => {
-                secCounter++
-                sec.innerHTML = "0" + secCounter
-                if (secCounter > 9) {
-                    sec.innerHTML = secCounter
-                }
-                if (secCounter > 59) {
-                    secCounter = 0
-                    minCounter++
-                    min.innerHTML = "0" + minCounter
-                }
-                if (minCounter > 9) {
-                    min.innerHTML = minCounter
-                }
-                if (minCounter > 59) {
-                    minCounter = 0
-                    hrCounter++
-                    min.innerHTML = "0" + hrCounter
-                }
-                if (hrCounter > 9) {
-                    min.innerHTML = hrCounter
-                }
-
-            }, 1000);
-        }
-        function stopInterval() {
-            clearInterval(interval)
-        }
-        function flagg() {
-            document.body.appendChild(paragrh)
-            // paragrh.innerHTML = hour.innerHTML + ":" + min.innerHTML + ":" + sec.innerHTML
-            paragrh.innerHTML += `${hour.innerHTML}:${min.innerHTML}:${sec.innerHTML} <br>`
-            console.log(paragrh);
-        }
-    </script>
+    <script src="stopWatch.js"></script>
 </body>
 
 </html>
