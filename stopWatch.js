@@ -18,6 +18,8 @@ allbtn.addEventListener("click", () => {
   if (span[0].classList.contains("active") == false) {
     console.log("play");
     stopwatch();
+    flag.removeAttribute("disabled")
+    rest.removeAttribute("disabled")
   } else {
     console.log("stop");
     stopInterval();
@@ -34,7 +36,10 @@ rest.addEventListener("click", () => {
   span.forEach((restPlay) => {
     restPlay.classList.toggle("active");
   });
+
   stopInterval();
+  flag.setAttribute("disabled","")
+  rest.setAttribute("disabled","")
 });
 flag.addEventListener("click", () => {
   flagg();
