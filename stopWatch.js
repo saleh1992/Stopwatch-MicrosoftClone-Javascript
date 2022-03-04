@@ -36,9 +36,11 @@ rest.addEventListener("click", () => {
   hour.innerHTML = "00";
   min.innerHTML = "00";
   sec.innerHTML = "00";
+  mele.innerHTML = "00";
   secCounter = 0;
   minCounter = 0;
   hrCounter = 0;
+  mileCounter = 0;
   paragrh.innerHTML = "";
   if (span[1].getAttribute("class") == "active") {
     span.forEach((restPlay) => {
@@ -101,7 +103,5 @@ function intervalMile() {
     if (mileCounter > 9) {
       mele.innerHTML = mileCounter;
     }
-
-    console.log(mele.innerHTML);
   }, 1);
 }
