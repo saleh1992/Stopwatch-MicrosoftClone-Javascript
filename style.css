@@ -1,5 +1,5 @@
 body {
-  background: #03a9f4;
+  background: #000000;
 }
 
 .conatiner {
@@ -23,6 +23,7 @@ div {
   font-size: 34px;
   margin: 0 5px;
   font-size: 85px;
+  color: #ffffff;
 }
 
 #min::before,
@@ -83,4 +84,6 @@ span {
 
 p {
   text-align: center;
+  color: #ffffff;
+
 }
