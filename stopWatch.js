@@ -103,5 +103,5 @@ function intervalMile() {
     if (mileCounter > 9) {
       mele.innerHTML = mileCounter;
     }
-  }, 1);
+  }, 10);
 }
