@@ -6,6 +6,7 @@ let paragrh = document.createElement("p");
 let secCounter = 0;
 let minCounter = 0;
 let hrCounter = 0;
+let mileCounter = 0;
 
 allbtn.addEventListener("click", () => {
   span.forEach((spanBtns) => {
@@ -17,17 +18,18 @@ allbtn.addEventListener("click", () => {
   });
   if (span[0].classList.contains("active") == false) {
     console.log("play");
+    intervalMile();
     stopwatch();
     flag.removeAttribute("disabled");
     rest.removeAttribute("disabled");
-    allbtn.style.background = "#330d0c"
-    allbtn.style.color = "#983137"
+    allbtn.style.background = "#330d0c";
+    allbtn.style.color = "#983137";
   } else {
     console.log("stop");
     flag.setAttribute("disabled", "");
     stopInterval();
-    allbtn.style.background = "#ffffff"
-    allbtn.style.color = "#000000"
+    allbtn.style.background = "#ffffff";
+    allbtn.style.color = "#000000";
   }
 });
 rest.addEventListener("click", () => {
@@ -40,14 +42,15 @@ rest.addEventListener("click", () => {
   paragrh.innerHTML = "";
   if (span[1].getAttribute("class") == "active") {
     span.forEach((restPlay) => {
-        restPlay.classList.toggle("active");
-      });
-  }else{}
+      restPlay.classList.toggle("active");
+    });
+  } else {
+  }
   stopInterval();
   flag.setAttribute("disabled", "");
   rest.setAttribute("disabled", "");
-  allbtn.style.background = "#ffffff"
-  allbtn.style.color = "#000000"
+  allbtn.style.background = "#ffffff";
+  allbtn.style.color = "#000000";
 });
 flag.addEventListener("click", () => {
   flagg();
@@ -80,10 +83,25 @@ function stopwatch() {
 }
 function stopInterval() {
   clearInterval(interval);
+  clearInterval(mi);
 }
 function flagg() {
   document.body.appendChild(paragrh);
   // paragrh.innerHTML = hour.innerHTML + ":" + min.innerHTML + ":" + sec.innerHTML
   paragrh.innerHTML += `${hour.innerHTML}:${min.innerHTML}:${sec.innerHTML} <br>`;
   console.log(paragrh);
+}
+function intervalMile() {
+  mi = setInterval(() => {
+    mileCounter++;
+    if (mileCounter == 99) {
+      mileCounter = 0;
+    }
+    mele.innerHTML = "0" + mileCounter;
+    if (mileCounter > 9) {
+      mele.innerHTML = mileCounter;
+    }
+
+    console.log(mele.innerHTML);
+  }, 1);
 }

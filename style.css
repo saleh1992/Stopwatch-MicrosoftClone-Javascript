@@ -15,10 +15,14 @@ body {
 div {
   display: inline-block;
 }
+.conatiner #mele {
+  font-size: 50px;
+}
 
 #sec,
 #min,
-#hour {
+#hour,
+#mele {
   position: relative;
   font-size: 34px;
   margin: 0 5px;
@@ -26,6 +30,13 @@ div {
   color: #ffffff;
 }
 
+#sec::before {
+  content: ".";
+  position: absolute;
+  left: 95%;
+  top: 50%;
+  transform: translateY(-50%);
+}
 #min::before,
 #hour::before {
   content: ":";
