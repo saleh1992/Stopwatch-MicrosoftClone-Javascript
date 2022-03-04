@@ -2,6 +2,7 @@ let start = document.querySelector("#start");
 let stop = document.querySelector("#stop");
 let span = Array.from(document.querySelectorAll("span"));
 let allbtn = document.querySelector("#start-stop");
+let a = document.querySelector("a");
 let paragrh = document.createElement("p");
 let secCounter = 0;
 let minCounter = 0;
@@ -23,13 +24,13 @@ allbtn.addEventListener("click", () => {
     flag.removeAttribute("disabled");
     rest.removeAttribute("disabled");
     allbtn.style.background = "#330d0c";
-    allbtn.style.color = "#983137";
+    a.style.color = "#983137";
   } else {
     console.log("stop");
     flag.setAttribute("disabled", "");
     stopInterval();
     allbtn.style.background = "#ffffff";
-    allbtn.style.color = "#000000";
+    a.style.color = "#000000";
   }
 });
 rest.addEventListener("click", () => {
@@ -52,7 +53,7 @@ rest.addEventListener("click", () => {
   flag.setAttribute("disabled", "");
   rest.setAttribute("disabled", "");
   allbtn.style.background = "#ffffff";
-  allbtn.style.color = "#000000";
+  a.style.color = "#000000";
 });
 flag.addEventListener("click", () => {
   flagg();
