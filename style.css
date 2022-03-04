@@ -64,13 +64,13 @@ div {
 }
 
 button {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin: 0 12px;
   border: none;
-  font-size: 21px;
-  line-height: 50px;
+  font-size: 30px;
+  line-height: 70px;
   cursor: pointer;
 }
 
@@ -85,5 +85,4 @@ span {
 p {
   text-align: center;
   color: #ffffff;
-
 }
