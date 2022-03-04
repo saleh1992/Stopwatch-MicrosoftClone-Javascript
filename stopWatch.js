@@ -20,10 +20,14 @@ allbtn.addEventListener("click", () => {
     stopwatch();
     flag.removeAttribute("disabled");
     rest.removeAttribute("disabled");
+    allbtn.style.background = "#330d0c"
+    allbtn.style.color = "#983137"
   } else {
     console.log("stop");
     flag.setAttribute("disabled", "");
     stopInterval();
+    allbtn.style.background = "#ffffff"
+    allbtn.style.color = "#000000"
   }
 });
 rest.addEventListener("click", () => {
@@ -42,6 +46,8 @@ rest.addEventListener("click", () => {
   stopInterval();
   flag.setAttribute("disabled", "");
   rest.setAttribute("disabled", "");
+  allbtn.style.background = "#ffffff"
+  allbtn.style.color = "#000000"
 });
 flag.addEventListener("click", () => {
   flagg();
