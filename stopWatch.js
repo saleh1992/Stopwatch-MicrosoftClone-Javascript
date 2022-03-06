@@ -77,10 +77,10 @@ function stopwatch() {
     if (minCounter > 59) {
       minCounter = 0;
       hrCounter++;
-      min.innerHTML = "0" + hrCounter;
+      hour.innerHTML = "0" + hrCounter;
     }
     if (hrCounter > 9) {
-      min.innerHTML = hrCounter;
+      hour.innerHTML = hrCounter;
     }
   }, 1000);
 }
